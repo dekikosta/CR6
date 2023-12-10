@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events{% endblock %}
+
+{% block body %}
+
+
+     <header class="hero-section">
+        <img src="{{ asset('images/hero-image.jpg') }}" alt="Hero Image" class="hero-image">
+         <div class="hero-content">
+           <h1>Welcome to Our Events</h1>
+          <p>Explore amazing events and more...</p>
+        </div>
+      </header>
+
+        <div class ="container">
+        <div class="row row-cols-lg-5 row-cols-md-4 row-cols-ms-3 row-cols-xs-1 mt-4">
+        {% for event in events %}
+        <div class="card" >
+           <img src="{{ asset('images/'~ event.picture) }}" class="card-img-top" alt="...">
+           <div class="card-body">
+           <h5 class="card-title">{{ event.name }}</h5>
+           <p class="card-text">{{ event.startDateTime ? event.startDateTime|date('Y-m-d H:i:s') : '' }}</p>
+           <a class ="btn btn-info" href="{{ path('app_events_show', {'id': event.id}) }}">Event Details</a>
+            <a class="btn btn-warning mt-2" href="{{ path('app_events_edit', {'id': event.id}) }}">Edit Event</a>
+         </div>
+         </div>
+           
+        {% else %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> No Events found.
+        </div>
+        {% endfor %}
+        </div>
+        <a class="btn btn-secondary mt-3" href="{{ path('app_events_new') }}">Create new</a>
+     </div>
+
+{% endblock %}
+

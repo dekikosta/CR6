@@ -1,0 +1,66 @@
+
+
+
+.btn {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #3498db;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+}
+
+
+.hero-section {
+    position: relative;
+    height: 400px; 
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero-content {
+    font-family: 'Alfa Slab One', serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #e9f506;
+    max-width: 80%; 
+    margin: 0 auto; 
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px; 
+    }
+
+    .hero-content {
+        max-width: 90%; 
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 200px; 
+    }
+
+    .hero-content {
+        max-width: 100%; 
+    }
+}
+
