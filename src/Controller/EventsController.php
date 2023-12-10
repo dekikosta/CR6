@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\FileUploader;
 
 
-#[Route('/events')]
+#[Route('/')]
 class EventsController extends AbstractController
 {
     #[Route('/', name: 'app_events_index', methods: ['GET'])]
